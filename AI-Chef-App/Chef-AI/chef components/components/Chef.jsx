@@ -9,8 +9,7 @@ export default function Chef(props){
    const [ingredients,setIngredients] = React.useState(["Chicken", "Rice", "Broccoli", "Garlic", "Olive Oil"])
 
    
-   const [recipe, setRecipe] = React.useState()
-   console.log(recipe) // Initial recipe state
+   const [recipe, setRecipe] = React.useState("")
 
    
 React.useEffect(() => {
@@ -19,13 +18,11 @@ React.useEffect(() => {
    
 async function handleRecipe() {
     const airecipe = await getRecipeFromMistral(ingredients)
-    // console.log("Mistral" + airecipe) //Actual recipe data from Mistral
     setRecipe(airecipe)
-    // console.log(recipe) //Recipe state after setting it to the generated recipe
-    
 }
 function clearRecipe(){
     setRecipe("")
+    setIngredients([])
     // alert("Recipe cleared!")
 }
     
@@ -48,7 +45,6 @@ function clearRecipe(){
             
         }
        }
-    // console.log(import.meta.env.VITE_HF_API_KEY)
        
     return(
         <main>
@@ -56,12 +52,16 @@ function clearRecipe(){
             <form className="input-section" action={addIngredient} >
                 <input className="input-field" type="text" placeholder="e.g. oregano" name="ingredient"/>
                 <button className="add-ingredient-btn">Add Ingredient</button>
-                <button type="button" className="clr-ingredient-btn" onClick={clearRecipe}>Clear Recipe</button>
+                {recipe.length > 0 ? <button type="button" className="clr-ingredient-btn" onClick={clearRecipe}>Clear Recipe</button> : null}
               
             </form>
 
             <PrevIngredients/>
-            {ingredients.length > 0 && <IngredientsList ingredients= {ingredients} toggleShowRecipe ={handleRecipe}/>}
+            {ingredients.length > 0 && <IngredientsList 
+                ingredients= {ingredients}  
+                toggleShowRecipe ={handleRecipe}
+                recipeGenerated = {recipe.length}
+            />}
 
           
                 
