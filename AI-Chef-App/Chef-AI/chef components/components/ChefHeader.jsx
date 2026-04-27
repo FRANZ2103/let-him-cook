@@ -1,4 +1,4 @@
-import chefLogo from "../assets/2chef-claude-icon.svg"
+import chefLogo from "../assets/chef-claude-icon.png"
 export default function ChefHeader(){
     function handleMouseHover(){
         console.log("Mouse hovered over image!\n")

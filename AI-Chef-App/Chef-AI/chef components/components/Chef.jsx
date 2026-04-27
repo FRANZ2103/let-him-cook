@@ -7,9 +7,8 @@ import PrevIngredients from "./PrevIngredients";
 
 export default function Chef(props){
    const [ingredients,setIngredients] = React.useState(["Chicken", "Rice", "Broccoli", "Garlic", "Olive Oil"])
-
-   
    const [recipe, setRecipe] = React.useState("")
+   const [loading, setLoading] = useState(false)
 
    
 React.useEffect(() => {
@@ -17,8 +16,16 @@ React.useEffect(() => {
 }, [recipe])
    
 async function handleRecipe() {
-    const airecipe = await getRecipeFromMistral(ingredients)
-    setRecipe(airecipe)
+    setLoading(true)
+
+    try {
+        const airecipe = await getRecipeFromMistral(ingredients)
+        setRecipe(airecipe)
+    } catch (err) {
+        console.error(err)
+    } finally {
+        setLoading(false)
+    }
 }
 function clearRecipe(){
     setRecipe("")
@@ -52,7 +59,7 @@ function clearRecipe(){
             <form className="input-section" action={addIngredient} >
                 <input className="input-field" type="text" placeholder="e.g. oregano" name="ingredient"/>
                 <button className="add-ingredient-btn">Add Ingredient</button>
-                {recipe.length > 0 ? <button type="button" className="clr-ingredient-btn" onClick={clearRecipe}>Clear Recipe</button> : null}
+                {/* {recipe.length > 0 ? <button type="button" className="clr-ingredient-btn" onClick={clearRecipe}>Clear Recipe</button> : null} */}
               
             </form>
 
@@ -61,6 +68,8 @@ function clearRecipe(){
                 ingredients= {ingredients}  
                 toggleShowRecipe ={handleRecipe}
                 recipeGenerated = {recipe.length}
+                clearRecipe = {clearRecipe}
+                loading = {loading}
             />}
 
           

@@ -87,20 +87,6 @@ gap: 11px;
     margin-right: 5px;
 }
 
-.clr-ingredient-btn{
-    margin: 2px;
-    width: 183;
-    height: 38;
-    opacity: 1;
-    padding: 9px 17px;
-    border-radius: 6px;
-    background-color: #D17557;
-    color: white;
-    font-size: 14px;
-    flex-shrink: 0;
-
-}
-
 main{
     padding: 30px 10px 30px;
 }
@@ -140,6 +126,20 @@ fieldset{
     font-family: Inter, sans-serif;
     font-size: 0.875rem;
     cursor: pointer;
+    
+}
+
+.get-recipe-container button.clr-ingredient-btn{
+    margin: 2px;
+    width: 183;
+    height: 38;
+    opacity: 1;
+    padding: 9px 17px;
+    border-radius: 6px;
+    background-color: #c43535;
+    color: white;
+    font-size: 14px;
+    flex-shrink: 0;
 }
 
 .suggested-recipe-container {
