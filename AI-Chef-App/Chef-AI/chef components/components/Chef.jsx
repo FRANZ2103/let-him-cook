@@ -4,7 +4,7 @@ import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
 import { getRecipeFromMistral } from "./ai";
 import PrevIngredients from "./PrevIngredients";
-
+import chefLogo from "../assets/2chef-claude-icon.svg"
 export default function Chef(props){
    const [ingredients,setIngredients] = React.useState(["Chicken", "Rice", "Broccoli", "Garlic", "Olive Oil"])
    const [recipe, setRecipe] = React.useState("")
