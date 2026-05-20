@@ -49,8 +49,8 @@ export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
     try {
         const response = await hf.chatCompletion({
-            provider: "hf-inference",
-            model: "katanemo/Arch-Router-1.5B",
+            provider: "novita",
+model: "meta-llama/Meta-Llama-3-8B-Instruct",
             // model: "google/gemma-2-9b-it",
             messages: [
                 { role: "system", content: SYSTEM_PROMPT },
