@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import React from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
@@ -15,11 +16,20 @@ React.useEffect(() => {
     console.log("Updated recipe:", recipe)
 }, [recipe])
    
+function removeIngredient(id){
+    console.log("PROPS.ID! "+ id) 
+    // const test = setIngredients(prev=>..prev.filter(whichPad))
+    setIngredients(prevIngredients => prevIngredients.filter((ingredients)=>ingredients.id != id))
+    
+}
+
 async function handleRecipe() {
+    console.log("TESSSSSSSSSSSSTTT" +IngredientsList.length)
+    const values = ingredients.map(item => item.value)
     setLoading(true)
 
     try {
-        const airecipe = await getRecipeFromMistral(ingredients)
+        const airecipe = await getRecipeFromMistral(values)
         setRecipe(airecipe)
     } catch (err) {
         console.error(err)
@@ -44,9 +54,10 @@ function clearRecipe(){
         if(fieldIngredient === ""){
             alert("Please enter an ingredient before adding.")       
         }else{
-            setIngredients(()=>[...ingredients,fieldIngredient])
-            console.log(ingredients)
-            console.log(recipeShown)
+            setIngredients(prev=>[...prev,{id:crypto.randomUUID(), value:fieldIngredient}])
+            // const ingLogger = ingredients.map=>
+            console.log(ingredients.map(ingredients =>(ingredients.value)))
+            // console.log(recipeShown)
             // Function for adding an ingredient to the listed data
             //added if no ingredient, do not add to the list
             
@@ -72,6 +83,7 @@ function clearRecipe(){
                 recipeGenerated = {recipe.length}
                 clearRecipe = {clearRecipe}
                 loading = {loading}
+                removeIngredient = {removeIngredient}
             />
 
             </div>
