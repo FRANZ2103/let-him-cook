@@ -58,22 +58,25 @@ function clearRecipe(){
             <p className=".dg-eyebrow">AI-powered recipes</p>
             <h1 className="dg-headline">What's in your kitchen?</h1>
             <p className="dg-subline">Add your ingredients and we'll craft the perfect recipe.</p>
-            <form className="input-section" action={addIngredient} >
-                <input className="input-field" type="text" placeholder="e.g. oregano" name="ingredient"/>
-                <button className="add-ingredient-btn">Add Ingredient</button>
+            <div className="dg-card">
+            <form className="dg-input-row" action={addIngredient} >
+                <input className="dg-input" name="ingredient" type="text" placeholder="e.g. eggs, garlic, pasta..."/>
+                <button className="dg-add-btn" >+ Add Ingredient</button>
                 {/* {recipe.length > 0 ? <button type="button" className="clr-ingredient-btn" onClick={clearRecipe}>Clear Recipe</button> : null} */}
               
             </form>
-
-            <PrevIngredients/>
-            {ingredients.length > 0 && <IngredientsList 
+                  
+             <IngredientsList 
                 ingredients= {ingredients}  
                 toggleShowRecipe ={handleRecipe}
                 recipeGenerated = {recipe.length}
                 clearRecipe = {clearRecipe}
                 loading = {loading}
-            />}
+            />
 
+            </div>
+            
+            
           
                 
                     <ClaudeRecipe  generatedRecipe = {recipe}/>
