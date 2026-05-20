@@ -6,7 +6,7 @@ import { getRecipeFromMistral } from "./ai";
 import PrevIngredients from "./PrevIngredients";
 import chefLogo from "../assets/2chef-claude-icon.svg"
 export default function Chef(props){
-   const [ingredients,setIngredients] = React.useState(["Chicken", "Rice", "Broccoli", "Garlic", "Olive Oil"])
+   const [ingredients,setIngredients] = React.useState([])
    const [recipe, setRecipe] = React.useState("")
    const [loading, setLoading] = useState(false)
 
@@ -54,8 +54,10 @@ function clearRecipe(){
        }
        
     return(
-        <main>
-            <center><p>Enter your Ingredients in the field below:</p></center>
+        <main className="dg-main">
+            <p className=".dg-eyebrow">AI-powered recipes</p>
+            <h1 className="dg-headline">What's in your kitchen?</h1>
+            <p className="dg-subline">Add your ingredients and we'll craft the perfect recipe.</p>
             <form className="input-section" action={addIngredient} >
                 <input className="input-field" type="text" placeholder="e.g. oregano" name="ingredient"/>
                 <button className="add-ingredient-btn">Add Ingredient</button>

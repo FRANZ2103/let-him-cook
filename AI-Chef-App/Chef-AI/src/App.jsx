@@ -7,9 +7,9 @@ export default function App(){
  
  
   return (
-    <>
+    <div className="dg-root">
     <ChefHeader/>
     <Chef/>
-    </>
+    </div>
   )
 }

@@ -1,12 +1,12 @@
 export default function IngredientsList(props){
     console.log(props.ingredients)
      const listedIngredients = props.ingredients.map((ingredient) =>(
-        // <li key={ingredient}> {ingredient} </li>
-        <div className="chckbox-ingredients">
-            <input type="checkbox" key={ingredient} value={ingredient}/>  
-        <label>{ingredient}</label>
+        <li key={ingredient}> {ingredient} </li>
+        // <div className="chckbox-ingredients">
+        //     <input type="checkbox" key={ingredient} value={ingredient}/>  
+        // <label>{ingredient}</label>
 
-            </div>
+        //     </div>
         
         
     ))
