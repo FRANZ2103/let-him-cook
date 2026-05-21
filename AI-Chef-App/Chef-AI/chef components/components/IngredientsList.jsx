@@ -8,9 +8,6 @@ export default function IngredientsList(props){
                     <button onClick={()=>props.removeIngredient(ingredient.id)} className="dg-pill-x">✕</button> 
                 </li>
             ))}
-        {/* // <div className="chckbox-ingredients">
-        //     <input type="checkbox" key={ingredient} value={ingredient}/>  
-        // <label>{ingredient}</label> */}
 
           </ul>
          )

@@ -6,7 +6,9 @@ import IngredientsList from "./IngredientsList";
 import { getRecipeFromMistral } from "./ai";
 import PrevIngredients from "./PrevIngredients";
 import chefLogo from "../assets/2chef-claude-icon.svg"
+
 export default function Chef(props){
+    const jumpToSection = React.useRef(null)
    const [ingredients,setIngredients] = React.useState([])
    const [recipe, setRecipe] = React.useState("")
    const [loading, setLoading] = useState(false)
@@ -16,12 +18,21 @@ React.useEffect(() => {
     console.log("Updated recipe:", recipe)
 }, [recipe])
    
+
+React.useEffect(() => {
+    if (recipe) {
+        jumpToSection.current?.scrollIntoView({
+            behavior: "smooth"
+        })
+    }
+}, [recipe])
 function removeIngredient(id){
     console.log("PROPS.ID! "+ id) 
     // const test = setIngredients(prev=>..prev.filter(whichPad))
     setIngredients(prevIngredients => prevIngredients.filter((ingredients)=>ingredients.id != id))
     
 }
+
 
 async function handleRecipe() {
     console.log("TESSSSSSSSSSSSTTT" +IngredientsList.length)
@@ -31,6 +42,7 @@ async function handleRecipe() {
     try {
         const airecipe = await getRecipeFromMistral(values)
         setRecipe(airecipe)
+
     } catch (err) {
         console.error(err)
     } finally {
@@ -66,7 +78,8 @@ function clearRecipe(){
        
     return(
         <main className="dg-main">
-            <p className=".dg-eyebrow">AI-powered recipes</p>
+        <a className="btn" href="#games">Jump to GAmes</a>
+            <p className="dg-eyebrow">AI-powered recipes</p>
             <h1 className="dg-headline">What's in your kitchen?</h1>
             <p className="dg-subline">Add your ingredients and we'll craft the perfect recipe.</p>
             <div className="dg-card">
@@ -88,10 +101,15 @@ function clearRecipe(){
 
             </div>
             
-            
+            <div id="games" ref={jumpToSection}>
+                
           
                 
-                    <ClaudeRecipe  generatedRecipe = {recipe}/>
+                    <ClaudeRecipe  
+                    id="test"
+                    generatedRecipe = {recipe}/>
+            </div>
+
         </main>
     )
 }
