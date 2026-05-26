@@ -1,13 +1,12 @@
-import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
 import React from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
-import { getRecipeFromMistral } from "./ai";
 import PrevIngredients from "./PrevIngredients";
 import chefLogo from "../assets/2chef-claude-icon.svg";
+import { v4 as uuidv4 } from "uuid";
+import { useState } from "react";
+import { getRecipeFromMistral } from "./ai";
 import { Slide, Zoom, Flip, Bounce } from "react-toastify";
-
 import { ToastContainer, toast } from "react-toastify";
 
 export default function Chef(props) {
@@ -60,17 +59,23 @@ export default function Chef(props) {
   }
 
   async function handleRecipe() {
-    console.log("TESSSSSSSSSSSSTTT" + IngredientsList.length);
-    const values = ingredients.map((item) => item.value);
-    setLoading(true);
+    // console.log("TESSSSSSSSSSSSTTT" + IngredientsList.length);
+    console.log("HERE ARE YOUR LENGTH");
+    console.log(ingredients.length !== 0);
+    if (ingredients.length !== 0) {
+      const values = ingredients.map((item) => item.value);
+      setLoading(true);
 
-    try {
-      const airecipe = await getRecipeFromMistral(values);
-      setRecipe(airecipe);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
+      try {
+        const airecipe = await getRecipeFromMistral(values);
+        setRecipe(airecipe);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      notify();
     }
   }
   function clearRecipe() {
@@ -124,7 +129,7 @@ export default function Chef(props) {
         <IngredientsList
           ingredients={ingredients}
           toggleShowRecipe={handleRecipe}
-          recipeGenerated={recipe.length}
+          // recipeGenerated={recipe.length}
           clearRecipe={clearRecipe}
           loading={loading}
           removeIngredient={removeIngredient}
@@ -134,7 +139,7 @@ export default function Chef(props) {
       <ToastContainer />
 
       <div ref={jumpToSection}>
-        <ClaudeRecipe id="test" generatedRecipe={recipe} />
+        {recipe && <ClaudeRecipe id="test" generatedRecipe={recipe} />}
       </div>
     </main>
   );
