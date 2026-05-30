@@ -17,31 +17,37 @@ export default function IngredientsList(props) {
   );
 
   return (
-    <section className="recipe-section">
+    <section>
       {props.ingredients.length ? (
         <div className="dg-pills">{listedIngredients}</div>
       ) : null}
-      <div className="get-recipe-container">
-        <div></div>
-
-        <div className="dg-generate">
+      <div className="recipe-section">
+        <button
+          onClick={props.toggleShowRecipe}
+          className="dg-generate dark:bg-[#F0EFE8] bg-[#1a1a18] "
+          disabled={props.loading}
+        >
+          {props.loading ? (
+            <span className="dg-generating">
+              <span className="dg-dot"></span>
+              <span className="dg-dot"></span>
+              <span className="dg-dot"></span>
+              Generating Recipe...{" "}
+            </span>
+          ) : (
+            <span id="gen-label" className="text-[#fafaf8] dark:text-[#18181A]">
+              Generate Recipe
+            </span>
+          )}
+        </button>
+        {props.recipeGenerated !== 0 && (
           <button
-            onClick={props.toggleShowRecipe}
-            className="dg-generate"
-            disabled={props.loading}
+            onClick={props.clearRecipe}
+            className="dg-generate m-1 !bg-red-600 !hover:bg-red-700"
           >
-            {props.loading ? (
-              <span className="dg-generating">
-                <span className="dg-dot"></span>
-                <span className="dg-dot"></span>
-                <span className="dg-dot"></span>
-                Generating Recipe...{" "}
-              </span>
-            ) : (
-              <span id="gen-label">Generate Recipe </span>
-            )}
+            Clear Recipe
           </button>
-        </div>
+        )}
       </div>
     </section>
   );

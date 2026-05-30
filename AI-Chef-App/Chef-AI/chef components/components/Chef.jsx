@@ -81,8 +81,17 @@ export default function Chef(props) {
   }
   function clearRecipe() {
     setRecipe("");
-    setIngredients([]);
-    // alert("Recipe cleared!")
+    toast.success("Recipe Cleared!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   }
 
   const [recipeShown, setRecipeShown] = React.useState(false);
@@ -111,27 +120,33 @@ export default function Chef(props) {
 
   return (
     <>
-      <main className="dg-main">
-        <p className="dg-eyebrow">AI-powered recipes</p>
+      <main className="dg-main dark:bg-[#18181A] dark:text-gray-200">
+        <p className="dg-eyebrow dark:text-[#F0EFE8]">AI-powered recipes</p>
+        {/* <p>{ingredients.length} ingredients entered</p> */}
         <h1 className="dg-headline">What's in your kitchen?</h1>
         <p className="dg-subline">
           Add your ingredients and we'll craft the perfect recipe.
         </p>
-        <div className="dg-card">
-          <form className="dg-input-row" action={addIngredient}>
+        <div className="dg-card dark:bg-[#222220]">
+          <form
+            className="dg-input-row dark:bg-[#222220] "
+            action={addIngredient}
+          >
             <input
               className="dg-input"
               name="ingredient"
               type="text"
               placeholder="e.g. eggs, garlic, pasta..."
             />
-            <button className="dg-add-btn">+ Add Ingredient</button>
+            <button className="dg-add-btn dark:text-[#fafaf8] bg-[#F0EFE8] dark:bg-[#1a1a18] text-[#18181A]">
+              {/* dark:bg-[#F0EFE8] bg-[#1a1a18] */}+ Add Ingredient
+            </button>
           </form>
 
           <IngredientsList
             ingredients={ingredients}
             toggleShowRecipe={handleRecipe}
-            // recipeGenerated={recipe.length}
+            recipeGenerated={recipe.length}
             clearRecipe={clearRecipe}
             loading={loading}
             removeIngredient={removeIngredient}
@@ -140,7 +155,7 @@ export default function Chef(props) {
 
         <ToastContainer />
 
-        <div ref={jumpToSection}>
+        <div ref={jumpToSection} className="pb-24">
           {recipe && <ClaudeRecipe id="test" generatedRecipe={recipe} />}
         </div>
       </main>
