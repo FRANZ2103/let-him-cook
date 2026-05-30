@@ -31,7 +31,7 @@ export default function Chef(props) {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "light",
       transition: Bounce,
     });
 

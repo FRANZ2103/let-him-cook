@@ -18,7 +18,9 @@ export default function IngredientsList(props) {
 
   return (
     <section className="recipe-section">
-      <div className="dg-pills">{listedIngredients}</div>
+      {props.ingredients.length ? (
+        <div className="dg-pills">{listedIngredients}</div>
+      ) : null}
       <div className="get-recipe-container">
         <div></div>
 
