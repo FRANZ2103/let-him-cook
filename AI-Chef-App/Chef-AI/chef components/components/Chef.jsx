@@ -8,6 +8,7 @@ import { useState } from "react";
 import { getRecipeFromMistral } from "./ai";
 import { Slide, Zoom, Flip, Bounce } from "react-toastify";
 import { ToastContainer, toast } from "react-toastify";
+import Footer from "./Footer";
 
 export default function Chef(props) {
   const notify = () =>
@@ -109,38 +110,41 @@ export default function Chef(props) {
   }
 
   return (
-    <main className="dg-main">
-      <p className="dg-eyebrow">AI-powered recipes</p>
-      <h1 className="dg-headline">What's in your kitchen?</h1>
-      <p className="dg-subline">
-        Add your ingredients and we'll craft the perfect recipe.
-      </p>
-      <div className="dg-card">
-        <form className="dg-input-row" action={addIngredient}>
-          <input
-            className="dg-input"
-            name="ingredient"
-            type="text"
-            placeholder="e.g. eggs, garlic, pasta..."
+    <>
+      <main className="dg-main">
+        <p className="dg-eyebrow">AI-powered recipes</p>
+        <h1 className="dg-headline">What's in your kitchen?</h1>
+        <p className="dg-subline">
+          Add your ingredients and we'll craft the perfect recipe.
+        </p>
+        <div className="dg-card">
+          <form className="dg-input-row" action={addIngredient}>
+            <input
+              className="dg-input"
+              name="ingredient"
+              type="text"
+              placeholder="e.g. eggs, garlic, pasta..."
+            />
+            <button className="dg-add-btn">+ Add Ingredient</button>
+          </form>
+
+          <IngredientsList
+            ingredients={ingredients}
+            toggleShowRecipe={handleRecipe}
+            // recipeGenerated={recipe.length}
+            clearRecipe={clearRecipe}
+            loading={loading}
+            removeIngredient={removeIngredient}
           />
-          <button className="dg-add-btn">+ Add Ingredient</button>
-        </form>
+        </div>
 
-        <IngredientsList
-          ingredients={ingredients}
-          toggleShowRecipe={handleRecipe}
-          // recipeGenerated={recipe.length}
-          clearRecipe={clearRecipe}
-          loading={loading}
-          removeIngredient={removeIngredient}
-        />
-      </div>
+        <ToastContainer />
 
-      <ToastContainer />
-
-      <div ref={jumpToSection}>
-        {recipe && <ClaudeRecipe id="test" generatedRecipe={recipe} />}
-      </div>
-    </main>
+        <div ref={jumpToSection}>
+          {recipe && <ClaudeRecipe id="test" generatedRecipe={recipe} />}
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

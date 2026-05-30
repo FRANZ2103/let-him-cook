@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap");
-
+@import "tailwindcss";
 /* css */
 html {
   scroll-behavior: smooth;
@@ -8,7 +8,9 @@ html {
 .dg-root {
   font-family: "DM Sans", sans-serif;
   background: #fafaf8;
-  min-height: 520px;
+  /* min-height: 520px; */
+  min-height: 100vh; /* was 520px */
+
   display: flex;
   flex-direction: column;
   color: #1a1a18;
