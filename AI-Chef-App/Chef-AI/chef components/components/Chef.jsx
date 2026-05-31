@@ -96,10 +96,6 @@ export default function Chef(props) {
   }
 
   const [recipeShown, setRecipeShown] = React.useState(false);
-  function toggleShowRecipe() {
-    setRecipeShown((prevValue) => !prevValue);
-    // Boolean function for changing Get Recipe Value
-  }
 
   function addIngredient(formData) {
     const fieldIngredient = formData.get("ingredient");
@@ -111,9 +107,7 @@ export default function Chef(props) {
         ...prev,
         { id: crypto.randomUUID(), value: fieldIngredient },
       ]);
-      // const ingLogger = ingredients.map=>
       console.log(ingredients.map((ingredients) => ingredients.value));
-      // console.log(recipeShown)
       // Function for adding an ingredient to the listed data
       //added if no ingredient, do not add to the list
     }

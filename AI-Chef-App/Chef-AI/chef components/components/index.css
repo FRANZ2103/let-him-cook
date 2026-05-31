@@ -293,20 +293,20 @@ html {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.3px;
-  color: #1a1a18;
+  /* color: #1a1a18; */
   /* color: red; */
   margin-bottom: 8px;
 }
 
 .dg-result-body {
   font-size: 13px;
-  color: #5f5e5a;
+  /* color: #5f5e5a; */
   line-height: 1.7;
 }
 
 .dg-result-body strong {
   display: block;
-  color: #2c2c2a;
+  /* color: #2c2c2a; */
   font-weight: 500;
   margin: 12px 0 4px;
   font-size: 12px;

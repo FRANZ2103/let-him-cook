@@ -10,34 +10,50 @@ export default function ClaudeRecipe(props) {
     <>
       <section>
         <article className="suggested-recipe-container" aria-live="polite">
-          {/* <ReactMarkdown>{props.generatedRecipe}</ReactMarkdown> */}
-
           <div className="dg-result bg-[#ffffff] dark:bg-[#18181A] dark:text-gray-200">
             <ReactMarkdown
               components={{
                 h1: ({ node, ...props }) => (
-                  <h1 className="dg-result-title" {...props} />
+                  <h1 className="dg-result-title " {...props} />
                 ),
                 h2: ({ node, ...props }) => (
-                  <h2 className="dg-result-title" {...props} />
+                  <h2
+                    className="dg-result-title dark:text-[#F0EFE8]"
+                    {...props}
+                  />
                 ),
                 h3: ({ node, ...props }) => (
-                  <h3 className="dg-result-title" {...props} />
+                  <h3
+                    className="dg-result-title dark:text-[#F0EFE8]"
+                    {...props}
+                  />
                 ),
                 h4: ({ node, ...props }) => (
                   <h4 className="dg-result-title" {...props} />
                 ),
                 ul: ({ node, ...props }) => (
-                  <ul className="dg-result-body" {...props} />
+                  <ul
+                    className="dg-result-body dark:text-[#F0EFE8] list-disc"
+                    {...props}
+                  />
                 ),
                 ol: ({ node, ...props }) => (
-                  <ol className="dg-result-body list-decimal ml-6" {...props} />
+                  <ol
+                    className="dg-result-body list-decimal ml-6 dark:text-[#F0EFE8] text-[#1a1a18]"
+                    {...props}
+                  />
                 ),
                 li: ({ node, ...props }) => (
-                  <li className="dg-result-body" {...props} />
+                  <li
+                    className="dg-result-body dark:text-[#F0EFE8]"
+                    {...props}
+                  />
                 ),
                 p: ({ node, ...props }) => (
-                  <p className="dg-result-body" {...props} />
+                  <p
+                    className="dg-result-body dark:text-[#F0EFE8]"
+                    {...props}
+                  />
                 ),
               }}
             >

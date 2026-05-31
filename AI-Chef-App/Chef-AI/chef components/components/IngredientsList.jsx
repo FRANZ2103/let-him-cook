@@ -15,7 +15,13 @@ export default function IngredientsList(props) {
       ))}
     </ul>
   );
-
+  function Test() {
+    if (confirm("Press a button!") == true) {
+      text = "You pressed OK!";
+    } else {
+      text = "You canceled!";
+    }
+  }
   return (
     <section>
       {props.ingredients.length ? (
@@ -23,7 +29,16 @@ export default function IngredientsList(props) {
       ) : null}
       <div className="recipe-section">
         <button
-          onClick={props.toggleShowRecipe}
+          onClick={
+            props.recipeGenerated !== 0 //Is there already a recipe generated?
+              ? () =>
+                  // If so, confirm before generating a new recipe
+                  confirm(
+                    "Are you sure you want to generate a new recipe? Your current recipe will be lost.",
+                  ) && props.toggleShowRecipe()
+              : () => props.toggleShowRecipe() // If not, just generate the recipe
+          }
+          //   onClick={props.toggleShowRecipe}
           className="dg-generate dark:bg-[#F0EFE8] bg-[#1a1a18] "
           disabled={props.loading}
         >
