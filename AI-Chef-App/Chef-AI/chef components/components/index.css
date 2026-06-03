@@ -22,7 +22,7 @@ html {
   /* display: flex; */
   align-items: center;
   /* justify-content: space-between; */
-  padding: 18px 32px;
+  /* padding: 18px 32px; */
   border-bottom: 0.5px solid #e5e5e0;
   /* background: #fafaf8; */
 }
@@ -55,7 +55,7 @@ html {
   background: #f0efe8;
   color: #888780;
   padding: 3px 8px;
-  border-radius: 20px;
+  border-radius: 4px;
   letter-spacing: 0.2px;
 }
 
@@ -64,7 +64,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 48px 24px 32px;
+  /* padding: 48px 24px 32px; */
 }
 
 .dg-eyebrow {
@@ -89,7 +89,7 @@ html {
 
 .dg-subline {
   font-size: 14px;
-  color: #888780;
+  /* color: #888780; */
   text-align: center;
   margin-bottom: 36px;
   font-weight: 300;
@@ -137,7 +137,7 @@ html {
   padding: 0 16px;
   /* background: #f0efe8;
   color: #1a1a18; */
-  border: none;
+  /* border: none; */
   border-radius: 8px;
   font-family: "DM Sans", sans-serif;
   font-size: 13px;
@@ -148,7 +148,7 @@ html {
 }
 
 .dg-add-btn:hover {
-  background: #e5e4dc;
+  /* background: #e5e4dc; */
 }
 
 .dg-pills {

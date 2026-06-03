@@ -47,7 +47,7 @@ export default function IngredientsList(props) {
               : () => props.toggleShowRecipe() // If not, just generate the recipe
           }
           //   onClick={props.toggleShowRecipe}
-          className="dg-generate dark:bg-[#F0EFE8] bg-[#1a1a18] "
+          className="dg-generate dark:bg-[#FF6B6B] bg-[#1a1a18] "
           disabled={props.loading}
         >
           {props.loading ? (
@@ -63,14 +63,14 @@ export default function IngredientsList(props) {
             </span>
           )}
         </button>
-        {props.recipeGenerated !== 0 && (
+        {/* {props.recipeGenerated !== 0 && (
           <button
             onClick={props.clearRecipe}
             className="dg-generate m-1 !bg-red-600 !hover:bg-red-700"
           >
             Clear Recipe
           </button>
-        )}
+        )} */}
       </div>
     </section>
   );

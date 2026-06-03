@@ -10,7 +10,7 @@ import { getRecipeFromMistral } from "./ai";
 import { Slide, Zoom, Flip, Bounce } from "react-toastify";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "./Footer";
-
+import Modal from "./Modal";
 export default function Chef(props) {
   const notify = () =>
     toast.warn("Please enter an ingredient before adding", {
@@ -115,11 +115,11 @@ export default function Chef(props) {
 
   return (
     <>
-      <main className="dg-main dark:bg-[#18181A] dark:text-gray-200">
+      <main className="dg-main dark:bg-[#2c2b2f] dark:text-gray-200 pt-32">
         <p className="dg-eyebrow dark:text-[#F0EFE8]">AI-powered recipes</p>
         {/* <p>{ingredients.length} ingredients entered</p> */}
         <h1 className="dg-headline">What's in your kitchen?</h1>
-        <p className="dg-subline">
+        <p className="dg-subline dark:text-[#fdfdfe]">
           Add your ingredients and we'll craft the perfect recipe.
         </p>
         <div className="dg-card dark:bg-[#222220]">
@@ -128,12 +128,12 @@ export default function Chef(props) {
             action={addIngredient}
           >
             <input
-              className="dg-input"
+              className="dg-input border-8 border-indigo-600"
               name="ingredient"
               type="text"
               placeholder="e.g. eggs, garlic, pasta..."
             />
-            <button className="dg-add-btn dark:text-[#fafaf8] bg-[#F0EFE8] dark:bg-[#1a1a18] text-[#18181A]">
+            <button className="dg-add-btn  bg-[#F0EFE8] dark:bg-[#dcf763] text-[#18181A] border border-[#1a1a18] dark:border-[#F0EFE8] ">
               {/* dark:bg-[#F0EFE8] bg-[#1a1a18] */}+ Add Ingredient
             </button>
           </form>
