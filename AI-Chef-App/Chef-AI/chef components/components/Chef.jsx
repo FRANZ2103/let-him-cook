@@ -122,18 +122,18 @@ export default function Chef(props) {
         <p className="dg-subline dark:text-[#fdfdfe]">
           Add your ingredients and we'll craft the perfect recipe.
         </p>
-        <div className="dg-card dark:bg-[#222220]">
+        <div className="dg-card dark:bg-[#222220] border-0.9 border-[#e5e5e0] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)]">
           <form
             className="dg-input-row dark:bg-[#222220] "
             action={addIngredient}
           >
             <input
-              className="dg-input border-8 border-indigo-600"
+              className="dg-input border-8 border-indigo-600 dark:bg-[#222]"
               name="ingredient"
               type="text"
               placeholder="e.g. eggs, garlic, pasta..."
             />
-            <button className="dg-add-btn  bg-[#F0EFE8] dark:bg-[#dcf763] text-[#18181A] border border-[#1a1a18] dark:border-[#F0EFE8] ">
+            <button className="dg-add-btn dark:text-[#fdfdfe] bg-[#F0EFE8] dark:bg-[#2d2d2d] text-[#18181A] border border-[#1a1a18] dark:border-[#F0EFE8] ">
               {/* dark:bg-[#F0EFE8] bg-[#1a1a18] */}+ Add Ingredient
             </button>
           </form>
