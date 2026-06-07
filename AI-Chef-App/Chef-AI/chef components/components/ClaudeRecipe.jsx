@@ -10,7 +10,7 @@ export default function ClaudeRecipe(props) {
     <>
       <section>
         <article className="suggested-recipe-container" aria-live="polite">
-          <div className="dg-result bg-[#ffffff] dark:bg-[#18181A] dark:text-gray-200">
+          <div className="dg-result bg-[#ffffff] dark:bg-[#18181A] dark:text-gray-200 ring-1 ring-black/10 dark:ring-[#FF6B6B]/10">
             <ReactMarkdown
               components={{
                 h1: ({ node, ...props }) => (

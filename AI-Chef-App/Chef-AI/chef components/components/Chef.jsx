@@ -122,7 +122,7 @@ export default function Chef(props) {
         <p className="dg-subline dark:text-[#fdfdfe]">
           Add your ingredients and we'll craft the perfect recipe.
         </p>
-        <div className="dg-card dark:bg-[#222220] border-0.9 border-[#e5e5e0] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)]">
+        <div className="dg-card dark:bg-[#222220] border-0.9 border-[#e5e5e0] ring-1 ring-black/10 dark:ring-white/10 ">
           <form
             className="dg-input-row dark:bg-[#222220] "
             action={addIngredient}
