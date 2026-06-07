@@ -64,10 +64,7 @@ export async function getRecipeFromMistral(ingredientsArr) {
   const ingredientsString = ingredientsArr.join(", ");
   try {
     const response = await hf.chatCompletion({
-      provider: "novita",
       model: "meta-llama/Meta-Llama-3-8B-Instruct",
-      //   provider: "together-ai",
-      //   model: "meta-llama/Llama-3.1-8B-Instruct-Turbo",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         {
@@ -82,3 +79,15 @@ export async function getRecipeFromMistral(ingredientsArr) {
     console.error(err.message);
   }
 }
+
+//
+// const response = await hf.chatCompletion({
+//   provider: "novita",
+//   model: "meta-llama/Meta-Llama-3-8B-Instruct",
+//   messages: [
+//     { role: "system", content: SYSTEM_PROMPT },
+//     {
+//       role: "user",
+//       content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!`,
+//     },
+//   ],
