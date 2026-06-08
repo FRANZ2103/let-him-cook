@@ -1,9 +1,3 @@
-import {
-  Description,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
 import { useState } from "react";
 
 export default function IngredientsList(props) {
@@ -37,15 +31,16 @@ export default function IngredientsList(props) {
       ) : null}
       <div className="recipe-section">
         <button
-          onClick={
-            props.recipeGenerated !== 0 //Is there already a recipe generated?
-              ? () =>
-                  // If so, confirm before generating a new recipe
-                  confirm(
-                    "Are you sure you want to generate a new recipe? Your current recipe will be lost.",
-                  ) && props.toggleShowRecipe()
-              : () => props.toggleShowRecipe() // If not, just generate the recipe
-          }
+          //   onClick={
+          //     props.recipeGenerated !== 0 //Is there already a recipe generated?
+          //       ? () =>
+          //           // If so, confirm before generating a new recipe
+          //           confirm(
+          //             "Are you sure you want to generate a new recipe? Your current recipe will be lost.",
+          //           ) && props.toggleShowRecipe()
+          //       : () => props.toggleShowRecipe() // If not, just generate the recipe
+          //   }
+          onClick={props.toggleShowRecipe}
           className="dg-generate dark:bg-[#FF6B6B] bg-[#1a1a18] "
           disabled={props.loading}
         >
@@ -62,14 +57,6 @@ export default function IngredientsList(props) {
             </span>
           )}
         </button>
-        {/* {props.recipeGenerated !== 0 && (
-          <button
-            onClick={props.clearRecipe}
-            className="dg-generate m-1 !bg-red-600 !hover:bg-red-700"
-          >
-            Clear Recipe
-          </button>
-        )} */}
       </div>
     </section>
   );

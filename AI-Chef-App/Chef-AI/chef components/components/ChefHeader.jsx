@@ -29,7 +29,7 @@ export default function ChefHeader() {
           alt="logo"
           onMouseOver={handleMouseHover}
         />
-        DishGen
+        <span className="text-xl dark:text-[#FF6B6B]">Let Him Cook!</span>
       </div>
       <div className="flex justify-end items-center gap-4 max-h-[1.5rem]">
         <span className="inline-flex items-center rounded-xl bg-[#f0efe8] px-2 py-1 text-xs font-medium text-[#888780] inset-ring inset-ring-gray-500/10">
