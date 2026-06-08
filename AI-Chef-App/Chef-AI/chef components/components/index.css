@@ -39,9 +39,9 @@ html {
 }
 
 .dg-logo-icon {
-  width: 30px;
-  height: 30px;
-  background: #1a1a18;
+  width: 50px;
+  height: 50px;
+  /* background: #1a1a18; */
   border-radius: 8px;
   display: flex;
   align-items: center;

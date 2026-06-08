@@ -46,7 +46,6 @@ export default function IngredientsList(props) {
                   ) && props.toggleShowRecipe()
               : () => props.toggleShowRecipe() // If not, just generate the recipe
           }
-          //   onClick={props.toggleShowRecipe}
           className="dg-generate dark:bg-[#FF6B6B] bg-[#1a1a18] "
           disabled={props.loading}
         >

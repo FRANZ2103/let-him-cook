@@ -1,7 +1,5 @@
 import ReactMarkdown from "react-markdown";
 
-{
-}
 export default function ClaudeRecipe(props) {
   console.log("ClaudeRecipe component received recipe prop:", props.recipe); // Log the received prop
   console.log("Generated Recipe:", props.generatedRecipe); // Log the generated recipe
