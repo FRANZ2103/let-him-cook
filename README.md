@@ -131,7 +131,7 @@ This project helped strengthen skills in:
 
 Ferdinand Francis Sundiam
 
-Bachelor of Science in Computer Engineering (Cum Laude)
+Computer Engineer
 
 LinkedIn: linkedin.com/in/franz-sundiam/
 
