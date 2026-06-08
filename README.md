@@ -4,7 +4,7 @@ AI-powered recipe generator built with React, Tailwind CSS, and the Hugging Face
 
 ## Live Demo
 
-https://your-vercel-url.vercel.app
+let-him-cook-roan.vercel.app/
 
 ## Overview
 
