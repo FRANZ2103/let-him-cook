@@ -140,7 +140,7 @@ html {
 
 .dg-add-btn {
   height: 40px;
-  padding: 0 16px;
+  /* padding: 0 16px; */
   /* background: #f0efe8;
   color: #1a1a18; */
   /* border: none; */
@@ -149,7 +149,7 @@ html {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   transition: background 0.15s;
 }
 
