@@ -113,8 +113,8 @@ export default function Chef(props) {
               type="text"
               placeholder="e.g. eggs, garlic, pasta..."
             />
-            <button className="dg-add-btn dark:text-[#fdfdfe] bg-[#F0EFE8] dark:bg-[#2d2d2d] text-[#18181A] border border-[#1a1a18] dark:border-[#F0EFE8] ">
-              + Add Ingredient
+            <button className="dg-add-btn dark:text-[#fdfdfe] bg-[#F0EFE8] dark:bg-[#2d2d2d] text-[#18181A] border border-[#1a1a18] dark:border-[#F0EFE8] md:px-6 ">
+              + Add ingredient
             </button>
           </form>
 

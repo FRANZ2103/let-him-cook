@@ -21,7 +21,7 @@ export default function ChefHeader() {
     setDarkMode((prevMode) => !prevMode);
   }
   return (
-    <nav className="bg-[#fafaf8] dark:bg-[#19191C] dark:text-gray-200 flex justify-between items-center fixed top-0 left-0 w-full min-h-[4rem] px-3 md:px-6">
+    <nav className="bg-[#fafaf8] dark:bg-[#19191C] dark:text-gray-200 flex justify-between items-center fixed top-0 left-0 w-full min-h-[4rem] px-3 md:px-6 shadow-sm z-20">
       <div className="flex items-center gap-2">
         <img
           className="w-7 h-7 md:w-9 md:h-9"
